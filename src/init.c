@@ -29,7 +29,7 @@ extern SDL_Rect
 				positionFond;/**<  Permet le positionnement du fond a l'ecran*/
 
 
-extern SDL_Event event; /* Variable permettant l'ecoute d'evenements SDL La variable contenant l'événement */
+extern SDL_Event event; /* Variable permettant l'ecoute d'evenements SDL La variable contenant l'Ã©vÃ©nement */
 extern unsigned int 
 					posPecheur1,/**<  Position courante du pecheur 1*/
 					tour_courant;
@@ -41,7 +41,7 @@ extern Animal* map;
 
 
 /********************************************//**
- * @brief Initialise les parametres SDL à chaque tour, surface ecran, surface logo ...
+ * @brief Initialise les parametres SDL Ã  chaque tour, surface ecran, surface logo ...
  *
  * @param void
  * @return void
@@ -70,17 +70,12 @@ void reinit_params(TTF_Font* police)
 
 
 		print_sac(police); //< Affichage du sac et de sa contenance, mise a jour du logo variant
-        print_legend(police);// Affiche le texte de la légende
+        print_legend(police);// Affiche le texte de la lÃ©gende
         print_help(police);
-<<<<<<< HEAD
-=======
-        
-        
->>>>>>> 19ad89c19fbe56345ad27a71f78fc5e2c3f3faa8
 //        print_values("n du tour: ",tour_courant,POSITION_PANIER_X + 220 , POSITION_PANIER_Y + 40,30);
 
 
-        // réinitialisation d'une carte vide*/
+        // rÃ©initialisation d'une carte vide*/
 
 }
 
@@ -188,9 +183,9 @@ void print_sac(TTF_Font* police)
 }
 void SDL_event_listener(SDL_Event eventquit,TTF_Font* police)
 {
-     /* tant qu'il reste des évènements dans la pile à évènement
-            on les dépiles un par un et on regarde quel évènement
-            a été appellé
+     /* tant qu'il reste des Ã©vÃ¨nements dans la pile Ã  Ã©vÃ¨nement
+            on les dÃ©piles un par un et on regarde quel Ã©vÃ¨nement
+            a Ã©tÃ© appellÃ©
 	     */
         while(SDL_PollEvent(&eventquit) != 0)
         {   int nextPos;
@@ -203,7 +198,7 @@ void SDL_event_listener(SDL_Event eventquit,TTF_Font* police)
                     switch(eventquit.key.keysym.sym)
                     {
                         case SDLK_z:
-                        case SDLK_UP: // Flèche haut
+                        case SDLK_UP: // FlÃ¨che haut
                             nextPos=get_new_pos(HAUT,posPecheur1);
                             if((estMur(nextPos) || map[nextPos].espece == t_mur) && nextPos>0)
                             {
@@ -218,7 +213,7 @@ void SDL_event_listener(SDL_Event eventquit,TTF_Font* police)
                             }
                             break;
                         case SDLK_s:
-                        case SDLK_DOWN: // Flèche bas
+                        case SDLK_DOWN: // FlÃ¨che bas
                             nextPos=get_new_pos(BAS,posPecheur1);
                             if( (estMur(nextPos) || map[nextPos].espece == t_mur) && nextPos < _TAILLE_TOTALE_)
                             {
@@ -233,7 +228,7 @@ void SDL_event_listener(SDL_Event eventquit,TTF_Font* police)
                             }
                             break;
                         case SDLK_d:
-                        case SDLK_RIGHT: // Flèche droite
+                        case SDLK_RIGHT: // FlÃ¨che droite
                             nextPos=get_new_pos(DROITE,posPecheur1);
                             if( (estMur(nextPos) || map[nextPos].espece == t_mur) && (((nextPos+1)%(_MAP_SIZE_)) != 0) )
                             {
@@ -248,7 +243,7 @@ void SDL_event_listener(SDL_Event eventquit,TTF_Font* police)
                             }
                             break;
                         case SDLK_q:
-                        case SDLK_LEFT: // Flèche gauche
+                        case SDLK_LEFT: // FlÃ¨che gauche
                             nextPos=get_new_pos(GAUCHE,posPecheur1);
                             if((estMur(nextPos) || map[nextPos].espece == t_mur) && ((nextPos%(_MAP_SIZE_)) != 0))
                             {
@@ -326,11 +321,11 @@ int choixPeche(TTF_Font* police)
                 switch(event.key.keysym.sym)
                 {
                     case SDLK_z:
-                    case SDLK_UP: // Flèche haut
+                    case SDLK_UP: // FlÃ¨che haut
                         pos=0;
                         break;
                     case SDLK_s:
-                    case SDLK_DOWN: // Flèche bas
+                    case SDLK_DOWN: // FlÃ¨che bas
                         pos=1;
                         break;
                     case SDLK_RETURN:
@@ -349,13 +344,13 @@ int choixPeche(TTF_Font* police)
 
         if(pos != 1)
         {
-            menu2 = TTF_RenderText_Solid(police, buf2, jaune); /* On écrit la chaîne temps dans la SDL_Surface */
-            menu1 = TTF_RenderText_Solid(police, buf, couleurNoire); /* On écrit la chaîne temps dans la SDL_Surface */
+            menu2 = TTF_RenderText_Solid(police, buf2, jaune); /* On Ã©crit la chaÃ®ne temps dans la SDL_Surface */
+            menu1 = TTF_RenderText_Solid(police, buf, couleurNoire); /* On Ã©crit la chaÃ®ne temps dans la SDL_Surface */
         }
         else
         {
-            menu2 = TTF_RenderText_Solid(police, buf2, couleurNoire); /* On écrit la chaîne temps dans la SDL_Surface */
-            menu1 = TTF_RenderText_Solid(police, buf, jaune); /* On écrit la chaîne temps dans la SDL_Surface */
+            menu2 = TTF_RenderText_Solid(police, buf2, couleurNoire); /* On Ã©crit la chaÃ®ne temps dans la SDL_Surface */
+            menu1 = TTF_RenderText_Solid(police, buf, jaune); /* On Ã©crit la chaÃ®ne temps dans la SDL_Surface */
         }
 <<<<<<< HEAD
        // // SDL_FreeSurface(ecran);
@@ -423,22 +418,22 @@ void pecheravecdirection(int position,TTF_Font* police)
                 switch(event.key.keysym.sym)
                 {
                     case SDLK_z:
-                    case SDLK_UP: // Flèche haut
+                    case SDLK_UP: // FlÃ¨che haut
                         continuer=0;
                         pecher(position,HAUT,police);
                         break;
                     case SDLK_s:
-                    case SDLK_DOWN: // Flèche bas
+                    case SDLK_DOWN: // FlÃ¨che bas
                         continuer=0;
                         pecher(position,BAS,police);
                         break;
                     case SDLK_q:
-                    case SDLK_LEFT: // Flèche haut
+                    case SDLK_LEFT: // FlÃ¨che haut
                         continuer=0;
                         pecher(position,GAUCHE,police);
                         break;
                     case SDLK_d:
-                    case SDLK_RIGHT: // Flèche bas
+                    case SDLK_RIGHT: // FlÃ¨che bas
                         continuer=0;
                         pecher(position,DROITE,police);
                         break;
@@ -621,12 +616,12 @@ int afficher_menu(TTF_Font* police)
                 switch(event.key.keysym.sym)
                 {
                     case SDLK_d:
-                    case SDLK_RIGHT: // Flèche haut
+                    case SDLK_RIGHT: // FlÃ¨che haut
                         if ( pos < 2 )
                         pos++;
                         break;
                     case SDLK_q:
-                    case SDLK_LEFT: // Flèche bas
+                    case SDLK_LEFT: // FlÃ¨che bas
 						if ( pos > 0 )
                         pos--;
                         break;
@@ -642,20 +637,20 @@ int afficher_menu(TTF_Font* police)
 
         if(pos == 1)
         {
-			menu1 = TTF_RenderText_Solid(policeMenu, buf, violet); /* On écrit la chaîne temps dans la SDL_Surface */
-            menu2 = TTF_RenderText_Solid(policeMenu, buf2, jaune); /* On écrit la chaîne temps dans la SDL_Surface */
+			menu1 = TTF_RenderText_Solid(policeMenu, buf, violet); /* On Ã©crit la chaÃ®ne temps dans la SDL_Surface */
+            menu2 = TTF_RenderText_Solid(policeMenu, buf2, jaune); /* On Ã©crit la chaÃ®ne temps dans la SDL_Surface */
             menu3 = TTF_RenderText_Solid(policeMenu, buf3, violet);
         }
         else if (pos == 2)
         {
-            menu1 = TTF_RenderText_Solid(policeMenu, buf, violet); /* On écrit la chaîne temps dans la SDL_Surface */
-            menu2 = TTF_RenderText_Solid(policeMenu, buf2, violet); /* On écrit la chaîne temps dans la SDL_Surface */
+            menu1 = TTF_RenderText_Solid(policeMenu, buf, violet); /* On Ã©crit la chaÃ®ne temps dans la SDL_Surface */
+            menu2 = TTF_RenderText_Solid(policeMenu, buf2, violet); /* On Ã©crit la chaÃ®ne temps dans la SDL_Surface */
             menu3 = TTF_RenderText_Solid(policeMenu, buf3, jaune);
         }
         else
         {
-			menu1 = TTF_RenderText_Solid(policeMenu, buf, jaune); /* On écrit la chaîne temps dans la SDL_Surface */
-            menu2 = TTF_RenderText_Solid(policeMenu, buf2, violet); /* On écrit la chaîne temps dans la SDL_Surface */
+			menu1 = TTF_RenderText_Solid(policeMenu, buf, jaune); /* On Ã©crit la chaÃ®ne temps dans la SDL_Surface */
+            menu2 = TTF_RenderText_Solid(policeMenu, buf2, violet); /* On Ã©crit la chaÃ®ne temps dans la SDL_Surface */
             menu3 = TTF_RenderText_Solid(policeMenu, buf3, violet);
 		}
 
