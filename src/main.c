@@ -37,6 +37,10 @@ int main(int argc, char* argv[])
 {
 	int 
 		i				= __VALEUR_NULLE__,
+<<<<<<< HEAD
+=======
+		j				= __VALEUR_NULLE__,
+>>>>>>> 19ad89c19fbe56345ad27a71f78fc5e2c3f3faa8
 		index			= __VALEUR_NULLE__,
 		degradation		= __VALEUR_NULLE__,
 		ModeDeJeu		= __VALEUR_NULLE__,

@@ -72,6 +72,11 @@ void reinit_params(TTF_Font* police)
 		print_sac(police); //< Affichage du sac et de sa contenance, mise a jour du logo variant
         print_legend(police);// Affiche le texte de la légende
         print_help(police);
+<<<<<<< HEAD
+=======
+        
+        
+>>>>>>> 19ad89c19fbe56345ad27a71f78fc5e2c3f3faa8
 //        print_values("n du tour: ",tour_courant,POSITION_PANIER_X + 220 , POSITION_PANIER_Y + 40,30);
 
 
@@ -352,7 +357,11 @@ int choixPeche(TTF_Font* police)
             menu2 = TTF_RenderText_Solid(police, buf2, couleurNoire); /* On écrit la chaîne temps dans la SDL_Surface */
             menu1 = TTF_RenderText_Solid(police, buf, jaune); /* On écrit la chaîne temps dans la SDL_Surface */
         }
+<<<<<<< HEAD
        // // SDL_FreeSurface(ecran);
+=======
+		SDL_FreeSurface(ecran);
+>>>>>>> 19ad89c19fbe56345ad27a71f78fc5e2c3f3faa8
         SDL_FillRect(ecran, NULL, SDL_MapRGB(ecran->format, 69, 120, 214));
         SDL_BlitSurface(menu2, NULL, ecran, &posmenu2); /* Blit du texte */
         SDL_BlitSurface(menu1, NULL, ecran, &posmenu1); /* Blit du texte */
@@ -363,9 +372,15 @@ int choixPeche(TTF_Font* police)
 
         SDL_Flip(ecran);
     }
+<<<<<<< HEAD
 //    // SDL_FreeSurface(menu1);
 //    // SDL_FreeSurface(menu2);
 //    // SDL_FreeSurface(menu3);
+=======
+		SDL_FreeSurface(menu1);
+		SDL_FreeSurface(menu2);
+		SDL_FreeSurface(menu3);
+>>>>>>> 19ad89c19fbe56345ad27a71f78fc5e2c3f3faa8
     return pos;
 }
 
@@ -438,7 +453,11 @@ void pecheravecdirection(int position,TTF_Font* police)
 
 
 
+<<<<<<< HEAD
        // // SDL_FreeSurface(ecran);
+=======
+		SDL_FreeSurface(ecran);
+>>>>>>> 19ad89c19fbe56345ad27a71f78fc5e2c3f3faa8
         SDL_FillRect(ecran, NULL, SDL_MapRGB(ecran->format, 69, 120, 214));
         SDL_BlitSurface(menu1, NULL, ecran, &posmenu1); /* Blit du texte */
 
@@ -448,9 +467,16 @@ void pecheravecdirection(int position,TTF_Font* police)
         SDL_BlitSurface(arrow,NULL,ecran,&positionArrow2);
 
         SDL_Flip(ecran);
+<<<<<<< HEAD
     }
 //    // SDL_FreeSurface(menu1);
     // SDL_FreeSurface(menu2);
+=======
+        SDL_FreeSurface(arrow);
+    }
+		SDL_FreeSurface(menu1);
+		SDL_FreeSurface(menu2);
+>>>>>>> 19ad89c19fbe56345ad27a71f78fc5e2c3f3faa8
 
 }
 
@@ -647,6 +673,16 @@ int afficher_menu(TTF_Font* police)
 
         SDL_Flip(ecran);
     }
+<<<<<<< HEAD
+=======
+    
+    SDL_FreeSurface(menuIntro),
+	SDL_FreeSurface(menu1),
+	SDL_FreeSurface(menu2),
+	SDL_FreeSurface(menu3),
+	SDL_FreeSurface(menu4),
+	SDL_FreeSurface(imageDeFondIntro);
+>>>>>>> 19ad89c19fbe56345ad27a71f78fc5e2c3f3faa8
 
     return pos;
 }

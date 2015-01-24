@@ -29,7 +29,12 @@
 
 // Define du main pour faciliter lecture
 
+<<<<<<< HEAD
 #define __Transition_tours__ tour_courant++;dessinerMap(police,0);
+=======
+#define __Transition_tours__	tour_courant++;\
+								dessinerMap(police,__DEHORS_MAP__);
+>>>>>>> 19ad89c19fbe56345ad27a71f78fc5e2c3f3faa8
 
 // Condition pour la victoire version macro 
 
