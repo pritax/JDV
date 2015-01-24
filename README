@@ -1,0 +1,87 @@
+---------------------------------------------------------------
+--Pour un debriefing rapide autour du projet, voir mainpage.h--
+---------------------------------------------------------------
+
+																Contenu de ce fichier
+																---------------------
+																   
+																 * Introduction
+																 * Usage et dépendances
+																 * Compilation
+																 * Configuration
+																 * FAQ
+
+																--------------
+																-Introduction-
+																--------------
+
+Ce jeu est une version BETA (0.99 actuellemet) du jeu de la vie. 
+Elle prèsente encore des bugs plus ou moins majeure tels que celui de la canne à pêche qui ne peut pêcher plus d'une fois par partie ou les grosses fuites mémoires.
+
+															----------------------
+															-Usage et dépendances-
+															----------------------
+
+Cette version du jeu de la vie utilise la bibliothèque SDL (version 1.2) afin de gérer la partie graphique du jeu.
+
+*****************
+*/* Unix-like */*
+*****************
+
+Assez-vous donc d'avoir au préalable téléchargé les librairies suivantes : libsdl1.2-dbg, libsdl1.2-dev, libsdl-image1.2-dev, libsdl-image1.2, libsdl-ttf2.0-0, libsdl-ttf2.0-dev
+
+Sous une distribution debian : sudo apt-get install libsdl1.2-* libsdl-image1.2-* libsdl-ttf2.0-*
+
+************************
+*/* Windows ou autre */*
+************************
+
+Malheureusement, il n'y aucune version de ce jeu de la vie sous windows.
+
+																--------------
+																-Compilation-
+																--------------
+1. tar -xvf JDV_lin.tar.gz
+2. cd ./JDV_lin
+2. make clean
+3. make
+4. ./executable
+
+Il est à noter qu'une version du programme pré compilée est disponible dans le répertoire courant. Pour le lancer : ./jdv.prog.
+
+Notez bien que cette version a été compilée pour une architecture 64 bits : x86_64-pc-linux-gnu.
+
+																---------------
+																-Configuration-
+																---------------
+Aucune configuration n'est actuellement disponible pour l'écosystème. Cependant, elle est prèvue pour la version officielle 1.0.
+
+
+																	-------
+																	--FAQ--
+																	-------
+Question 1
+/*********** Quel est le but du jeu ?
+-------------------------------------
+/*********** Traverser la map et arriver de l'autre côté de celle-ci.
+
+Question 2
+/*********** Comment jouer ?
+----------------------------
+/*********** Avec les flèches directionnelles : haut, bas, droite, gauche. Pour pêcher à n'importe quel moment, appuyez sur la touche espace.
+/*********** Il est également possible de jouer avec les touches : z, s, d, q.
+
+Question 3
+/*********** À quand la version officielle ?
+--------------------------------------------
+/*********** Lorsque la canne à pêche sera complétement fonctionnelle et plus de fuites mémoires. (+ autres bugs mineurs)
+
+Question 4
+/*********** Trop de ram utilisée, que faire ?
+--------------------------------------------------------------
+/*********** À l'heure actuelle, aucune correctio n'a été apportée pour ce problème. Mais ce problème sera à coup sûr résolu pour la version officielle.
+
+Question 5
+/*********** Je n'aime pas le jeu, à qui dois-je me plaindre ?
+--------------------------------------------------------------
+/*********** À personne, faites simplement alt+f4, puis rm -rvf sur le dossier et la compression du jeu. Et le tour est joué.
