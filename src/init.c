@@ -352,11 +352,7 @@ int choixPeche(TTF_Font* police)
             menu2 = TTF_RenderText_Solid(police, buf2, couleurNoire); /* On écrit la chaîne temps dans la SDL_Surface */
             menu1 = TTF_RenderText_Solid(police, buf, jaune); /* On écrit la chaîne temps dans la SDL_Surface */
         }
-<<<<<<< HEAD
-       // // SDL_FreeSurface(ecran);
-=======
 		SDL_FreeSurface(ecran);
->>>>>>> 19ad89c19fbe56345ad27a71f78fc5e2c3f3faa8
         SDL_FillRect(ecran, NULL, SDL_MapRGB(ecran->format, 69, 120, 214));
         SDL_BlitSurface(menu2, NULL, ecran, &posmenu2); /* Blit du texte */
         SDL_BlitSurface(menu1, NULL, ecran, &posmenu1); /* Blit du texte */
