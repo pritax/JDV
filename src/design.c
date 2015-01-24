@@ -161,22 +161,15 @@ void dessinerMap(TTF_Font* police,int position_courante)
         position.y +=SAUTDECASE +5;
         position.x=SAUTDECASE+5;
         SDL_BlitSurface(legende[0][f+1], NULL, ecran, &position);
-<<<<<<< HEAD
-        // SDL_FreeSurface(legende[0][f+1]);
-//        SDL_free(legende[0][f+1]);
-=======
->>>>>>> 19ad89c19fbe56345ad27a71f78fc5e2c3f3faa8
     }
 
     // Mise à jour de l'écran
     SDL_Flip(ecran);
-<<<<<<< HEAD
-    /*// SDL_FreeSurface(ecran);*/
-=======
+    
     SDL_FreeSurface(pixels);
     SDL_FreeSurface(ecran);
     SDL_FreeSurface(legende[0][f+1]);
->>>>>>> 19ad89c19fbe56345ad27a71f78fc5e2c3f3faa8
+    
     /* Liberation des cellules */
 
 	//memset(posCanne,-1,taille_c);

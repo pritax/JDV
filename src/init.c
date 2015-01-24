@@ -445,7 +445,6 @@ void pecheravecdirection(int position,TTF_Font* police)
         SDL_Flip(ecran);
     }
         SDL_FreeSurface(arrow);
-    }
 		SDL_FreeSurface(menu1);
 		SDL_FreeSurface(menu2);
 
