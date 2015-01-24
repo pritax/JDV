@@ -644,16 +644,12 @@ int afficher_menu(TTF_Font* police)
 
         SDL_Flip(ecran);
     }
-<<<<<<< HEAD
-=======
-    
     SDL_FreeSurface(menuIntro),
 	SDL_FreeSurface(menu1),
 	SDL_FreeSurface(menu2),
 	SDL_FreeSurface(menu3),
 	SDL_FreeSurface(menu4),
 	SDL_FreeSurface(imageDeFondIntro);
->>>>>>> 19ad89c19fbe56345ad27a71f78fc5e2c3f3faa8
 
     return pos;
 }
