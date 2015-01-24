@@ -16,13 +16,17 @@ $(EXEC):$(Objets)
 	-$(CC) $(Objets) -o $(EXEC) $(Lib)
 	@echo "Executable crée : tapez ./executable pour lancer le jeu !"
 
-$(OBJDIR)/%.o : $(SRCDIR)/%.c
+
+$(OBJDIR)/%.o: $(SRCDIR)/%.c
 	-$(CC) -o $@ -c $^ $(Compil)
 	@echo "Compilation de "$^" reussie !"
 
 clean:
-	rm -rvf obj/*.o
-	@echo ".o supprimés !"
+	rm -Rvf obj
+	@echo "obj et .o supprimés !"
+	@mkdir obj
+	@echo "obj recrée !"
+	
 run:
 	make clean && make && ./$(EXEC)
 debug:
