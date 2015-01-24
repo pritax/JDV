@@ -363,15 +363,9 @@ int choixPeche(TTF_Font* police)
 
         SDL_Flip(ecran);
     }
-<<<<<<< HEAD
-//    // SDL_FreeSurface(menu1);
-//    // SDL_FreeSurface(menu2);
-//    // SDL_FreeSurface(menu3);
-=======
 		SDL_FreeSurface(menu1);
 		SDL_FreeSurface(menu2);
 		SDL_FreeSurface(menu3);
->>>>>>> 19ad89c19fbe56345ad27a71f78fc5e2c3f3faa8
     return pos;
 }
 
@@ -440,15 +434,6 @@ void pecheravecdirection(int position,TTF_Font* police)
                 }
                 break;
         }
-
-
-
-
-<<<<<<< HEAD
-       // // SDL_FreeSurface(ecran);
-=======
-		SDL_FreeSurface(ecran);
->>>>>>> 19ad89c19fbe56345ad27a71f78fc5e2c3f3faa8
         SDL_FillRect(ecran, NULL, SDL_MapRGB(ecran->format, 69, 120, 214));
         SDL_BlitSurface(menu1, NULL, ecran, &posmenu1); /* Blit du texte */
 
@@ -458,16 +443,11 @@ void pecheravecdirection(int position,TTF_Font* police)
         SDL_BlitSurface(arrow,NULL,ecran,&positionArrow2);
 
         SDL_Flip(ecran);
-<<<<<<< HEAD
     }
-//    // SDL_FreeSurface(menu1);
-    // SDL_FreeSurface(menu2);
-=======
         SDL_FreeSurface(arrow);
     }
 		SDL_FreeSurface(menu1);
 		SDL_FreeSurface(menu2);
->>>>>>> 19ad89c19fbe56345ad27a71f78fc5e2c3f3faa8
 
 }
 
