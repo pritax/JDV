@@ -79,9 +79,9 @@ Question 3
 Question 4
 /*********** Trop de ram utilisée, que faire ?
 --------------------------------------------------------------
-/*********** À l'heure actuelle, aucune correctio n'a été apportée pour ce problème. Mais ce problème sera à coup sûr résolu pour la version officielle.
+/*********** À l'heure actuelle, aucune correction n'a été apportée pour ce problème. Mais ce problème sera à coup sûr résolu pour la version officielle.
 
 Question 5
 /*********** Je n'aime pas le jeu, à qui dois-je me plaindre ?
 --------------------------------------------------------------
-/*********** À personne, faites simplement alt+f4, puis rm -rvf sur le dossier et la compression du jeu. Et le tour est joué.
+/*********** À personne, faites simplement alt+f4, puis rm -Rvf sur le dossier et rm -rvf sur la compression du jeu. Et le tour est joué.
