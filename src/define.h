@@ -28,9 +28,8 @@
 #define __FIN_JEU__ }
 
 // Define du main pour faciliter lecture
-#define __Transition_tours__ tour_courant++;dessinerMap(police,0);
 #define __Transition_tours__	tour_courant++;\
-								dessinerMap(police,__DEHORS_MAP__);
+				dessinerMap(police,__DEHORS_MAP__);
 
 // Condition pour la victoire version macro 
 
