@@ -29,7 +29,6 @@
 
 // Define du main pour faciliter lecture
 #define __Transition_tours__ tour_courant++;dessinerMap(police,0);
-=======
 #define __Transition_tours__	tour_courant++;\
 								dessinerMap(police,__DEHORS_MAP__);
 
