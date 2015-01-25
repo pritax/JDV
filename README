@@ -56,7 +56,7 @@ Notez bien que cette version a été compilée pour une architecture 64 bits : x
 
 # Version git
 
-Pour suivre l'avancée de notre programme, vous pouvez cloner notre dépît GIT, pour cela :
+Pour suivre l'avancée de notre programme, vous pouvez cloner notre dépôt GIT, pour cela :
 
 1. git clone https://github.com/amaddah/JDV/
 2. cd JDV/
