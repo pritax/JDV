@@ -13,7 +13,7 @@
 *  \pre       Lancer l'application : ./bin/beta/jdv.prog
 *  \bug       Problème de la canne à pêche : impossible de pêcher avec la canne deux fois dans une partie.
 *  \bug       Quelques problèmes liés à la gestion de la mémoire : fuites importantes à corriger.
-*  \bug		    Problème d'équilibre de l'écosystème : possibilité parfois d'être stoppé par l'invasion de plancton ou autre espèce.
+*  \bug       Problème d'équilibre de l'écosystème : possibilité parfois d'être stoppé par l'invasion de plancton ou autre espèce.
 *  \warning   Une mauvaise utilisation peut faire planter l'application, version BETA 0.99
 *  \copyright GNU Public License, INSA-CVL .
 **/
