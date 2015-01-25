@@ -38,9 +38,12 @@ Sous une distribution debian : sudo apt-get install libsdl1.2-* libsdl-image1.2-
 
 Malheureusement, il n'y aucune version de ce jeu de la vie sous windows.
 
-																--------------
+																-------------
 																-Compilation-
-																--------------
+																-------------
+
+# Version zippée
+														
 1. tar -xvf JDV_lin.tar.gz
 2. cd ./JDV_lin
 2. make clean
@@ -51,6 +54,15 @@ Il est à noter qu'une version du programme pré compilée est disponible dans l
 
 Notez bien que cette version a été compilée pour une architecture 64 bits : x86_64-pc-linux-gnu.
 
+# Version git
+
+Pour suivre l'avancée de notre programme, vous pouvez cloner notre dépît GIT, pour cela :
+
+1. git clone https://github.com/amaddah/JDV/
+2. cd JDV/
+3. make clean
+4. make
+5. ./executable
 																---------------
 																-Configuration-
 																---------------
