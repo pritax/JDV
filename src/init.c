@@ -156,8 +156,7 @@ void print_screen(char* str,int x, int y,TTF_Font* police)
     masurf=TTF_RenderText_Blended(police, str, bleu);
 
     SDL_BlitSurface(masurf, NULL, ecran, &posTexte); // Blit du texte
-    //SDL_Flip(ecran);
-
+    SDL_FreeSurface(masurf);
 }
 
 
@@ -281,6 +280,7 @@ void print_img_onScreen(char* path,int x,int y)
 
     masurf = SDL_LoadBMP(path);
     SDL_BlitSurface(masurf,NULL,ecran,&mapos);
+    SDL_FreeSurface(masurf);
 }
 
 int choixPeche(TTF_Font* police)

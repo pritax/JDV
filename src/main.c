@@ -125,7 +125,7 @@ int main(int argc, char* argv[])
 									for(i=0;i<_TAILLE_TOTALE_;i++)
 										{
 											if(tour_courant % 10 != 0) break;
-											if((degradation ==87) && sacPecheur1 >20) {sacPecheur1--;degradation =0;}
+											if((degradation == 87) && sacPecheur1 >20) {sacPecheur1--;degradation =0;}
 											else
 												degradation++;
 											 //par simplicité, déclaration d'un animal courant
@@ -170,8 +170,7 @@ int main(int argc, char* argv[])
 							}
 
 		__FIN_JEU__
-									/*free(map); // Free NON clean */
-									/*free(tab); // Free NON clean */
+									free(map);
 									TTF_CloseFont(police);
 									TTF_Quit();
 									SDL_Quit();
