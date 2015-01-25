@@ -48,6 +48,7 @@
 #define __GAME_OVER__ 0
 #define __NB_VIE__ 100
 #define __SAC_BASE__ 0
+#define __INIT_VALEUR_JEU__ 1
 
 /* Définition du nombre de cases parcourues par chaque animal */
 

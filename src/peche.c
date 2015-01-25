@@ -25,7 +25,7 @@ int construire_pont(int position,Direction d,TTF_Font* police)
 	{
 		pecher(position,d,police);
 		last_build=tour_courant;
-		return 0;
+		return __VALEUR_NULLE__;
 	}
 
 	else
@@ -33,7 +33,7 @@ int construire_pont(int position,Direction d,TTF_Font* police)
 		/* si la case sur laquel on veut construire le pont n'est pas une case vide
 		   ou que le joueur à déja construit un morceau de pont ce tour, on ne fait rien*/
 		if(map[position].espece != t_vide || last_build >= tour_courant)
-			return -1;
+			return __VALEUR_ERROR__;
 		else
 		{
 			supprimer_animal(position);
@@ -41,7 +41,7 @@ int construire_pont(int position,Direction d,TTF_Font* police)
 			last_build=tour_courant;
 			if(sacPecheur1 > 0) sacPecheur1--;
 			else;
-			return 1;
+			return __INIT_VALEUR_JEU__;
 		}
 	}
 }

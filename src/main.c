@@ -21,8 +21,8 @@
 
 
 unsigned int
-				tour_courant  = 1,
-				dernier_repas = 1,
+				tour_courant  = __INIT_VALEUR_JEU__,
+				dernier_repas = __INIT_VALEUR_JEU__,
 				posPecheur1;
 Animal* map;
 BOOLEEN victory = faux;
