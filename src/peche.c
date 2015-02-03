@@ -9,7 +9,7 @@ extern unsigned int
 extern Animal* map;
 static int last_build;
 SDL_Surface 
-			*carte[][_MAP_SIZE_],
+			*carte[_MAP_SIZE_][_MAP_SIZE_],
 			*ecran;
 int 
 	*posCanne=NULL,

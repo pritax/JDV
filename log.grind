@@ -1,0 +1,494 @@
+==4274== Memcheck, a memory error detector
+==4274== Copyright (C) 2002-2011, and GNU GPL'd, by Julian Seward et al.
+==4274== Using Valgrind-3.7.0 and LibVEX; rerun with -h for copyright info
+==4274== Command: ./executable
+==4274== 
+==4274== Invalid read of size 4
+==4274==    at 0x408AB5: ajouter_animal_alea (ajout_animaux.c:26)
+==4274==    by 0x409953: ajouter_all_animaux (ajout_animaux.c:275)
+==4274==    by 0x401608: main (main.c:86)
+==4274==  Address 0xd25df94 is not stack'd, malloc'd or (recently) free'd
+==4274== 
+==4274== Invalid write of size 4
+==4274==    at 0x408AD8: ajouter_animal_alea (ajout_animaux.c:31)
+==4274==    by 0x409953: ajouter_all_animaux (ajout_animaux.c:275)
+==4274==    by 0x401608: main (main.c:86)
+==4274==  Address 0xd25df94 is not stack'd, malloc'd or (recently) free'd
+==4274== 
+==4274== Invalid write of size 4
+==4274==    at 0x408AF5: ajouter_animal_alea (ajout_animaux.c:32)
+==4274==    by 0x409953: ajouter_all_animaux (ajout_animaux.c:275)
+==4274==    by 0x401608: main (main.c:86)
+==4274==  Address 0xd25df8c is 12 bytes after a block of size 43,200 alloc'd
+==4274==    at 0x4C28BED: malloc (vg_replace_malloc.c:263)
+==4274==    by 0x4087C6: genererMap (map.c:14)
+==4274==    by 0x401603: main (main.c:82)
+==4274== 
+==4274== Invalid write of size 4
+==4274==    at 0x408B12: ajouter_animal_alea (ajout_animaux.c:33)
+==4274==    by 0x409953: ajouter_all_animaux (ajout_animaux.c:275)
+==4274==    by 0x401608: main (main.c:86)
+==4274==  Address 0xd25df90 is not stack'd, malloc'd or (recently) free'd
+==4274== 
+==4274== Invalid write of size 4
+==4274==    at 0x408B2F: ajouter_animal_alea (ajout_animaux.c:34)
+==4274==    by 0x409953: ajouter_all_animaux (ajout_animaux.c:275)
+==4274==    by 0x401608: main (main.c:86)
+==4274==  Address 0xd25df98 is not stack'd, malloc'd or (recently) free'd
+==4274== 
+==4274== Invalid write of size 4
+==4274==    at 0x408B4C: ajouter_animal_alea (ajout_animaux.c:35)
+==4274==    by 0x409953: ajouter_all_animaux (ajout_animaux.c:275)
+==4274==    by 0x401608: main (main.c:86)
+==4274==  Address 0xd25df9c is not stack'd, malloc'd or (recently) free'd
+==4274== 
+==4274== Invalid write of size 4
+==4274==    at 0x408B69: ajouter_animal_alea (ajout_animaux.c:36)
+==4274==    by 0x409953: ajouter_all_animaux (ajout_animaux.c:275)
+==4274==    by 0x401608: main (main.c:86)
+==4274==  Address 0xd25dfa0 is not stack'd, malloc'd or (recently) free'd
+==4274== 
+==4274== Invalid write of size 4
+==4274==    at 0x408B86: ajouter_animal_alea (ajout_animaux.c:37)
+==4274==    by 0x409953: ajouter_all_animaux (ajout_animaux.c:275)
+==4274==    by 0x401608: main (main.c:86)
+==4274==  Address 0xd25dfa4 is not stack'd, malloc'd or (recently) free'd
+==4274== 
+==4274== Invalid write of size 4
+==4274==    at 0x408BA3: ajouter_animal_alea (ajout_animaux.c:38)
+==4274==    by 0x409953: ajouter_all_animaux (ajout_animaux.c:275)
+==4274==    by 0x401608: main (main.c:86)
+==4274==  Address 0xd25dfa8 is not stack'd, malloc'd or (recently) free'd
+==4274== 
+==4274== Invalid write of size 4
+==4274==    at 0x408BC0: ajouter_animal_alea (ajout_animaux.c:40)
+==4274==    by 0x409953: ajouter_all_animaux (ajout_animaux.c:275)
+==4274==    by 0x401608: main (main.c:86)
+==4274==  Address 0xd25df88 is 8 bytes after a block of size 43,200 alloc'd
+==4274==    at 0x4C28BED: malloc (vg_replace_malloc.c:263)
+==4274==    by 0x4087C6: genererMap (map.c:14)
+==4274==    by 0x401603: main (main.c:82)
+==4274== 
+==4274== Invalid write of size 4
+==4274==    at 0x408BE7: ajouter_animal_alea (ajout_animaux.c:42)
+==4274==    by 0x409953: ajouter_all_animaux (ajout_animaux.c:275)
+==4274==    by 0x401608: main (main.c:86)
+==4274==  Address 0xd25df80 is 0 bytes after a block of size 43,200 alloc'd
+==4274==    at 0x4C28BED: malloc (vg_replace_malloc.c:263)
+==4274==    by 0x4087C6: genererMap (map.c:14)
+==4274==    by 0x401603: main (main.c:82)
+==4274== 
+==4274== Invalid write of size 4
+==4274==    at 0x408BFF: ajouter_animal_alea (ajout_animaux.c:43)
+==4274==    by 0x409953: ajouter_all_animaux (ajout_animaux.c:275)
+==4274==    by 0x401608: main (main.c:86)
+==4274==  Address 0xd25df84 is 4 bytes after a block of size 43,200 alloc'd
+==4274==    at 0x4C28BED: malloc (vg_replace_malloc.c:263)
+==4274==    by 0x4087C6: genererMap (map.c:14)
+==4274==    by 0x401603: main (main.c:82)
+==4274== 
+==4274== Invalid read of size 4
+==4274==    at 0x408E6B: ajouter_animal_alea (ajout_animaux.c:104)
+==4274==    by 0x409953: ajouter_all_animaux (ajout_animaux.c:275)
+==4274==    by 0x401608: main (main.c:86)
+==4274==  Address 0xd25df94 is not stack'd, malloc'd or (recently) free'd
+==4274== 
+==4274== Invalid read of size 4
+==4274==    at 0x408E87: ajouter_animal_alea (ajout_animaux.c:105)
+==4274==    by 0x409953: ajouter_all_animaux (ajout_animaux.c:275)
+==4274==    by 0x401608: main (main.c:86)
+==4274==  Address 0xd25df94 is not stack'd, malloc'd or (recently) free'd
+==4274== 
+==4274== Invalid read of size 4
+==4274==    at 0x409054: ajouter_animal_alea (ajout_animaux.c:127)
+==4274==    by 0x409953: ajouter_all_animaux (ajout_animaux.c:275)
+==4274==    by 0x401608: main (main.c:86)
+==4274==  Address 0xd25df94 is not stack'd, malloc'd or (recently) free'd
+==4274== 
+==4274== Invalid read of size 4
+==4274==    at 0x4093FA: ajouter_animal_alea (ajout_animaux.c:194)
+==4274==    by 0x409953: ajouter_all_animaux (ajout_animaux.c:275)
+==4274==    by 0x401608: main (main.c:86)
+==4274==  Address 0xd25df94 is not stack'd, malloc'd or (recently) free'd
+==4274== 
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+Vie du pecheur 100
+Vous êtes encore ALIVE
+==4274== 
+==4274== HEAP SUMMARY:
+==4274==     in use at exit: 7,511,764 bytes in 1,591 blocks
+==4274==   total heap usage: 47,178 allocs, 45,587 frees, 61,938,551 bytes allocated
+==4274== 
+==4274== LEAK SUMMARY:
+==4274==    definitely lost: 757,591 bytes in 300 blocks
+==4274==    indirectly lost: 511,000 bytes in 782 blocks
+==4274==      possibly lost: 3,600 bytes in 1 blocks
+==4274==    still reachable: 6,239,573 bytes in 508 blocks
+==4274==         suppressed: 0 bytes in 0 blocks
+==4274== Rerun with --leak-check=full to see details of leaked memory
+==4274== 
+==4274== For counts of detected and suppressed errors, rerun with: -v
+==4274== ERROR SUMMARY: 20 errors from 16 contexts (suppressed: 6 from 6)

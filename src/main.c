@@ -47,7 +47,6 @@ int main(int argc, char* argv[])
 {
 	int 
 		i				= __VALEUR_NULLE__,
-		j				= __VALEUR_NULLE__,
 		index			= __VALEUR_NULLE__,
 		degradation		= __VALEUR_NULLE__,
 		ModeDeJeu		= __VALEUR_NULLE__,
@@ -62,9 +61,11 @@ int main(int argc, char* argv[])
     SDL_Rect posVictory;
 				posVictory.x = __POS_X_HAUT_GAUCHE__;
 				posVictory.y = __POS_Y_HAUT_GAUCHE__;
+				
+	/* CSV */
 	FILE* fichier = fopen("data.csv",__EN_ECRITURE__);
-	
 	fprintf(fichier, "nb_tour;plancton;corail;bar;thon;pollution;pyranha;requin;orque;baleine\n");
+	/* FIn CSV */
 
 	srand(time(NULL));
 
@@ -123,7 +124,7 @@ int main(int argc, char* argv[])
 								// == Test Pecheur ==
 								
 								printf("Vie du pecheur %d\n",pvPecheur1);
-								if ( pvPecheur1 <= 0 )
+								if ( pvPecheur1 < 1 )
 												{
 													printf("Vous êtes DEAD (mdr), vous allez respawn\n");
 													sleep(3);
@@ -142,12 +143,14 @@ int main(int argc, char* argv[])
 											if(tour_courant % 10 != 0) break;
 											
 											
-											if((degradation == 87) && sacPecheur1 >20) {sacPecheur1--;degradation =0;}
+											if((degradation == 87) && sacPecheur1 >__SAC_BASE__) {sacPecheur1--;degradation =0;}
 											else
 												degradation++;
 											 //par simplicité, déclaration d'un animal courant
 													index = tab[i];
 													animal_courant = map[index];
+													
+													/* CSV */
 													espece_c = animal_courant.espece;
 													switch(espece_c)
 														{
@@ -181,6 +184,7 @@ int main(int argc, char* argv[])
 															default:
 																break;
 														}
+														/* CSV */
 													
 
 													if(animal_courant.espece == t_mur || animal_courant.espece == t_vide) continue;
@@ -199,6 +203,7 @@ int main(int argc, char* argv[])
 																//de type vide (case libre)
 																if ( appliquerSatiete(index) == vrai )
 																		{
+																			/* CSV */
 																			espece_c = map[index].espece;
 																			switch(espece_c)
 														{
@@ -232,6 +237,7 @@ int main(int argc, char* argv[])
 															default:
 																break;
 														}
+														/* Fin CSV */
 																		}
 
 																	else 	{
