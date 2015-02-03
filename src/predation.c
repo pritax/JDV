@@ -105,7 +105,7 @@ BOOLEEN predater(int index)
         }
         if ( map[future_proie].espece == t_pecheur )
 			{
-				//pvPecheur1--;
+				pvPecheur1--;
 				return vrai;
 			}
     case t_pollution:
@@ -135,7 +135,7 @@ BOOLEEN predater(int index)
         }
         if ( map[future_proie].espece == t_pecheur )
 			{
-				//pvPecheur1--;
+				pvPecheur1--;
 				return vrai;
 			}
     case t_requin:
@@ -175,7 +175,7 @@ BOOLEEN predater(int index)
         }
         if ( map[future_proie].espece == t_pecheur )
 			{
-				//pvPecheur1--;
+				pvPecheur1--;
 				return vrai;
 			}
     default:

@@ -488,6 +488,7 @@ void afficher_pvPecheur(TTF_Font *police)
 		}
 		print_values("Points de vie :",pvPecheur1,POSITION_PANIER_X +(_TAILLE_TOTALE_/4)+10,POSITION_PANIER_Y+75,police);
 		print_screen(" %",POSITION_PANIER_X +(_TAILLE_TOTALE_/4)+116,POSITION_PANIER_Y+75,police);
+		print_values("Tour numero : ",tour_courant,POSITION_PANIER_X +(_TAILLE_TOTALE_/4)+10,POSITION_PANIER_Y+100,police);
 	}
 
 int afficher_menu(TTF_Font* police)
