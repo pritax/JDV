@@ -1,6 +1,6 @@
 SHELL = /bin/sh
 
-CC=gcc
+CC=clang
 Compil=-g -O0 -Wall
 Lib=`sdl-config --cflags --libs` -lSDL_image -lSDL_ttf
 

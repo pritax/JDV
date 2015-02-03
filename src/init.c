@@ -465,10 +465,10 @@ void print_help(TTF_Font* police)
     print_screen("= ESPACE  : Lancer la peche            =",x,y,police);y+=20;
     print_screen("==============================",x,y,police);y+=20;
     print_screen("========= BUT du jeu  ==========",x,y,police);y+=20;
-    print_screen("=   Pecher un maximum de             =",x,y,police);y+=20;
-    print_screen("=   poisson sur le nombre de          =",x,y,police);y+=20;
-    print_screen("=   tours impartis.                                =",x,y,police);y+=20;
-    print_screen("=    /!\\ un poiscail, ca mord !            =",x,y,police);y+=20;
+    print_screen("= Traverser la map  de haut           =",x,y,police);y+=20;
+    print_screen("= en bas sur le nombre de             =",x,y,police);y+=20;
+    print_screen("= tours impartis                                  =",x,y,police);y+=20;
+    print_screen("= /!\\ un poiscail, ca mord !             =",x,y,police);y+=20;
     print_screen("==============================",x,y,police);
     
     afficher_pvPecheur(police);

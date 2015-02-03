@@ -73,7 +73,7 @@ void ajouter_animal_alea(Type t_animal)
             }
         }
         break;
-    /*case t_bar:
+  /*  case t_bar:
         for(i= case_aleatoire(0,_TAILLE_TOTALE_); compteurs[t_animal-1] < _NB_BAR_; i=case_aleatoire(0,_TAILLE_TOTALE_))
         {
             espece = map[i].espece;
@@ -85,7 +85,7 @@ void ajouter_animal_alea(Type t_animal)
                 (map+i)->metabolisme = _METABOLISME_BAR;
                 (map+i)->gestation = _GESTATION_BAR_;
                 (map+i)->taille = _TAILLE_BAR_;
-                (map+i)->saut_max = _SAUT_MAX_;
+                (map+i)->saut_max = _SAUT_MAX_PETIT_;
                 (map+i)->frequence_reproduction = _FREQUENCE_REPRODUCTION_BAR_;
 
                 (map+i)->satiete = _SATIETE_BAR;
@@ -97,8 +97,8 @@ void ajouter_animal_alea(Type t_animal)
                 compteurs[t_animal-1]++;
             }
         }
-        break;*/
-    case t_thon:
+        break;
+ */   case t_thon:
         for(i= case_aleatoire(0,_TAILLE_TOTALE_); compteurs[t_animal-1] < _NB_THON_; i=case_aleatoire(0,_TAILLE_TOTALE_))
         {
             espece = map[i].espece;
@@ -110,7 +110,7 @@ void ajouter_animal_alea(Type t_animal)
                 (map+i)->metabolisme = _METABOLISME_THON;
                 (map+i)->gestation = _GESTATION_THON_;
                 (map+i)->taille = _TAILLE_THON_;
-                (map+i)->saut_max = _SAUT_MAX_;
+                (map+i)->saut_max = _SAUT_MAX_PETIT_;
                 (map+i)->frequence_reproduction = _FREQUENCE_REPRODUCTION_THON_;
 
                 (map+i)->satiete = _SATIETE_THON;
@@ -133,18 +133,16 @@ void ajouter_animal_alea(Type t_animal)
                 (map+i)->metabolisme = _METABOLISME_POLLUTION;
                 (map+i)->gestation = _GESTATION_POLLUTION_;
                 (map+i)->taille = _TAILLE_POLLUTION_;
-                (map+i)->saut_max = _SAUT_MAX_;
+                (map+i)->saut_max = _SAUT_MAX_PETIT_;
                 (map+i)->frequence_reproduction = _FREQUENCE_REPRODUCTION_POLLUTION_;
-
                 (map+i)->satiete = _SATIETE_POLLUTION;
-
                 (map+i)->dernier_repas = dernier_repas;
                 (map+i)->derniere_reproduction = 0;
                 compteurs[t_animal-1]++;
             }
         }
         break;
-		/*case t_pyranha:
+/*		case t_pyranha:
         for(i= case_aleatoire(0,_TAILLE_TOTALE_); compteurs[t_animal-1] < _NB_PYRANHA_; i=case_aleatoire(0,_TAILLE_TOTALE_))
         {
             espece = map[i].espece;
@@ -156,7 +154,7 @@ void ajouter_animal_alea(Type t_animal)
                 (map+i)->metabolisme = _METABOLISME_PYRANHA;
                 (map+i)->gestation = _GESTATION_PYRANHA_;
                 (map+i)->taille = _TAILLE_PYRANHA_;
-                (map+i)->saut_max = _SAUT_MAX_;
+                (map+i)->saut_max = _SAUT_MAX_MOYEN_;
                 (map+i)->frequence_reproduction = _FREQUENCE_REPRODUCTION_PYRANHA_;
 
                 (map+i)->satiete = _SATIETE_PYRANHA;
@@ -167,7 +165,7 @@ void ajouter_animal_alea(Type t_animal)
             }
         }
         break;
-      case t_requin:
+    */  case t_requin:
         for(i= case_aleatoire(0,_TAILLE_TOTALE_); compteurs[t_animal-1] < _NB_REQUIN_; i=case_aleatoire(0,_TAILLE_TOTALE_))
         {
             espece = map[i].espece;
@@ -179,7 +177,7 @@ void ajouter_animal_alea(Type t_animal)
                 (map+i)->metabolisme = _METABOLISME_REQUIN;
                 (map+i)->gestation = _GESTATION_REQUIN_;
                 (map+i)->taille = _TAILLE_REQUIN_;
-                (map+i)->saut_max = _SAUT_MAX_;
+                (map+i)->saut_max = _SAUT_MAX_MOYEN_;
                 (map+i)->frequence_reproduction = _FREQUENCE_REPRODUCTION_REQUIN_;
 
                 (map+i)->satiete = _SATIETE_REQUIN;
@@ -202,7 +200,7 @@ void ajouter_animal_alea(Type t_animal)
                 (map+i)->metabolisme = _METABOLISME_ORQUE;
                 (map+i)->gestation = _GESTATION_ORQUE_;
                 (map+i)->taille = _TAILLE_ORQUE_;
-                (map+i)->saut_max = _SAUT_MAX_;
+                (map+i)->saut_max = _SAUT_MAX_MOYEN_;
                 (map+i)->frequence_reproduction = _FREQUENCE_REPRODUCTION_ORQUE_;
 
                 (map+i)->satiete = _SATIETE_ORQUE;
@@ -212,7 +210,7 @@ void ajouter_animal_alea(Type t_animal)
                 compteurs[t_animal-1]++;
             }
         }
-        break;*/
+        break;
     case t_baleine:
         for(i= case_aleatoire(0,_TAILLE_TOTALE_); compteurs[t_animal-1] < _NB_BALEINE_; i=case_aleatoire(0,_TAILLE_TOTALE_))
         {
@@ -225,7 +223,7 @@ void ajouter_animal_alea(Type t_animal)
                 (map+i)->metabolisme = _METABOLISME_BALEINE;
                 (map+i)->gestation = _GESTATION_BALEINE_;
                 (map+i)->taille = _TAILLE_BALEINE_;
-                (map+i)->saut_max = _SAUT_MAX_;
+                (map+i)->saut_max = _SAUT_MAX_GROS_;
                 (map+i)->frequence_reproduction = _FREQUENCE_REPRODUCTION_BALEINE_;
 
                 (map+i)->satiete = _SATIETE_BALEINE;
@@ -266,7 +264,7 @@ void ajouter_animal_alea(Type t_animal)
     default:
         break;
     }
-    /*free(compteurs);*/ // free non CLEAN
+    //VIDER_POINTEUR(compteurs);
 }
 
 void ajouter_all_animaux(void)

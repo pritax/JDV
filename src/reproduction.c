@@ -7,6 +7,17 @@
 
 extern unsigned int tour_courant;
 extern Animal* map;
+extern int 
+	nb_plancton,
+	nb_corail,
+	nb_bar,
+	nb_thon,
+	nb_pollution,
+	nb_pyranha,
+	nb_requin,
+	nb_orque,
+	nb_baleine;
+
 
 BOOLEEN appliquerReproduction(int index)
 {
@@ -26,6 +37,39 @@ BOOLEEN appliquerReproduction(int index)
 									{
 										dir=choisir_direction_aleatoire();
 										future_naissance = get_new_pos(dir,index);
+										Type espece_c = map[future_naissance].espece;
+										switch(espece_c)
+														{
+															case 1:
+																nb_plancton++;
+																break;
+															case 2:
+																nb_corail++;
+																break;
+															case 3:
+																nb_bar++;
+																break;
+															case 4:
+																nb_thon++;
+																break;
+															case 5:
+																nb_pollution++;
+																break;
+															case 6:
+																nb_pyranha++;
+																break;
+															case 7:
+																nb_requin++;
+																break;
+															case 8:
+																nb_orque++;
+																break;
+															case 9:
+																nb_baleine++;
+																break;
+															default:
+																break;
+														}
 
 										if ( map[future_naissance].espece == t_vide)
 										{

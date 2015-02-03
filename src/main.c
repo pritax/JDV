@@ -32,6 +32,16 @@ extern unsigned int sacPecheur1,pvPecheur1;
 extern SDL_Surface 
 					*imgVictory,
 					*ecran;
+int 
+	nb_plancton,
+	nb_corail,
+	nb_bar,
+	nb_thon,
+	nb_pollution,
+	nb_pyranha,
+	nb_requin,
+	nb_orque,
+	nb_baleine;
 
 int main(int argc, char* argv[])
 {
@@ -45,12 +55,16 @@ int main(int argc, char* argv[])
 		
 	Animal animal_courant;
 	int* tab=NULL;
+	Type espece_c;
 	TTF_Font* police;
     SDL_Event eventquit;
     
     SDL_Rect posVictory;
 				posVictory.x = __POS_X_HAUT_GAUCHE__;
 				posVictory.y = __POS_Y_HAUT_GAUCHE__;
+	FILE* fichier = fopen("data.csv",__EN_ECRITURE__);
+	
+	fprintf(fichier, "nb_tour;plancton;corail;bar;thon;pollution;pyranha;requin;orque;baleine\n");
 
 	srand(time(NULL));
 
@@ -112,6 +126,7 @@ int main(int argc, char* argv[])
 								if ( pvPecheur1 <= 0 )
 												{
 													printf("Vous êtes DEAD (mdr), vous allez respawn\n");
+													sleep(3);
 													respawn(posPecheur1);
 													//SDL_Flip(ecran);
 													sacPecheur1 = 0;
@@ -125,12 +140,48 @@ int main(int argc, char* argv[])
 									for(i=0;i<_TAILLE_TOTALE_;i++)
 										{
 											if(tour_courant % 10 != 0) break;
+											
+											
 											if((degradation == 87) && sacPecheur1 >20) {sacPecheur1--;degradation =0;}
 											else
 												degradation++;
 											 //par simplicité, déclaration d'un animal courant
 													index = tab[i];
 													animal_courant = map[index];
+													espece_c = animal_courant.espece;
+													switch(espece_c)
+														{
+															case 1:
+																nb_plancton++;
+																break;
+															case 2:
+																nb_corail++;
+																break;
+															case 3:
+																nb_bar++;
+																break;
+															case 4:
+																nb_thon++;
+																break;
+															case 5:
+																nb_pollution++;
+																break;
+															case 6:
+																nb_pyranha++;
+																break;
+															case 7:
+																nb_requin++;
+																break;
+															case 8:
+																nb_orque++;
+																break;
+															case 9:
+																nb_baleine++;
+																break;
+															default:
+																break;
+														}
+													
 
 													if(animal_courant.espece == t_mur || animal_courant.espece == t_vide) continue;
 
@@ -146,7 +197,42 @@ int main(int argc, char* argv[])
 
 																// si règle de surive non repsectée, l'animal meurt et est remplacé par un animal
 																//de type vide (case libre)
-																if ( appliquerSatiete(index) == vrai );
+																if ( appliquerSatiete(index) == vrai )
+																		{
+																			espece_c = map[index].espece;
+																			switch(espece_c)
+														{
+															case 1:
+																nb_plancton--;
+																break;
+															case 2:
+																nb_corail--;
+																break;
+															case 3:
+																nb_bar--;
+																break;
+															case 4:
+																nb_thon--;
+																break;
+															case 5:
+																nb_pollution--;
+																break;
+															case 6:
+																nb_pyranha--;
+																break;
+															case 7:
+																nb_requin--;
+																break;
+															case 8:
+																nb_orque--;
+																break;
+															case 9:
+																nb_baleine--;
+																break;
+															default:
+																break;
+														}
+																		}
 
 																	else 	{
 																								// Application de la règle REPRODUCTION
@@ -167,10 +253,15 @@ int main(int argc, char* argv[])
 
 														__Transition_tours__
 															__Verifier_victory__
+																if(tour_courant % 10 == 0) {__RESET_0__}
+																else{
+																	__LOGS__}
+																	
 							}
 
 		__FIN_JEU__
 									free(map);
+									fclose(fichier);
 									TTF_CloseFont(police);
 									TTF_Quit();
 									SDL_Quit();

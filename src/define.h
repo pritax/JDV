@@ -15,6 +15,7 @@
 
 /* Quelques defines */
 
+#define __EN_ECRITURE__ "w"
 #define __DEHORS_MAP__ -1 /* En dehors de la map */
 #define __POS_X_HAUT_GAUCHE__ 0
 #define __POS_Y_HAUT_GAUCHE__ 0
@@ -31,6 +32,16 @@
 #define __Transition_tours__	tour_courant++;\
 				dessinerMap(police,__DEHORS_MAP__);\
 				free(tab);
+#define __LOGS__ fprintf(fichier, "%d;%d;%d;%d;%d;%d;%d;%d;%d;%d\n",tour_courant,nb_plancton,nb_corail,nb_bar,nb_thon,nb_pollution,nb_pyranha,nb_requin,nb_orque,nb_baleine);
+#define __RESET_0__ nb_plancton=0,\
+				nb_corail=0,\
+				nb_bar=0,\
+				nb_thon=0,\
+				nb_pollution=0,\
+				nb_pyranha=0,\
+				nb_requin=0,\
+				nb_orque=0,\
+				nb_baleine=0;
 
 // Condition pour la victoire version macro 
 
@@ -47,14 +58,27 @@
 #define _TAILLE_TOTALE_ _MAP_SIZE_*_MAP_SIZE_
 #define __GAME_OVER__ 0
 #define __NB_VIE__ 100
-#define __SAC_BASE__ 0
+#define __SAC_BASE__ 30
 #define __INIT_VALEUR_JEU__ 1
 
 /* Définition du nombre de cases parcourues par chaque animal */
 
 #define _SAUT_MAX_ 1
-#define _SAUT_MAX_PYRANHA_ 3
-#define _SAUT_MAX_BALEINE_ 2
+
+
+// Petits animaux
+
+#define _SAUT_MAX_PETIT_ 3
+
+// Moyens animaux 
+
+#define _SAUT_MAX_MOYEN_ 10
+
+// Gros animaux
+
+#define _SAUT_MAX_GROS_ 15
+// Immboile
+
 #define _IMMOBILE_ 0
 
 /* Définition satiete / dernier repas et nombre de tours */
@@ -84,12 +108,13 @@ enum
 typedef enum
 {
     d_vide, /* duree de vide de l'animal vide */
+    d_baleine=10,
+
     d_corail = 25,
     d_bar=25,
     d_pyranha=25,
     d_requin=25,
     d_orque=25,
-    d_baleine=25,
     d_thon=25,
     d_pollution=25,
     d_plancton=25,
@@ -166,8 +191,9 @@ enum
     _METABOLISME_PYRANHA,
     _METABOLISME_REQUIN,
     _METABOLISME_ORQUE,
-    _METABOLISME_BALEINE,
     _METABOLISME_THON,
+    _METABOLISME_BALEINE,
+
     _METABOLISME_BAR,
     _METABOLISME_CORAIL_,
 
@@ -178,9 +204,10 @@ enum
 enum
 {
     _SATIETE_POLLUTION=-1,
-    _SATIETE_BALEINE,
     _SATIETE_BAR,
     _SATIETE_PYRANHA,
+    _SATIETE_BALEINE,
+
     _SATIETE_ORQUE,
     _SATIETE_THON,
     _SATIETE_CORAIL,

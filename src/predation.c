@@ -8,6 +8,16 @@
 
 extern Animal* map;
 extern unsigned int pvPecheur1;
+extern int 
+	nb_plancton,
+	nb_corail,
+	nb_bar,
+	nb_thon,
+	nb_pollution,
+	nb_pyranha,
+	nb_requin,
+	nb_orque,
+	nb_baleine;
 
 BOOLEEN predater(int index)
 {
@@ -18,6 +28,40 @@ BOOLEEN predater(int index)
     dir=choisir_direction_aleatoire();
     future_proie = get_new_pos(dir,index);
     taille_FP = map[future_proie].taille;
+    
+    Type espece_c = map[future_proie].espece;
+																			switch(espece_c)
+														{
+															case 1:
+																nb_plancton--;
+																break;
+															case 2:
+																nb_corail--;
+																break;
+															case 3:
+																nb_bar--;
+																break;
+															case 4:
+																nb_thon--;
+																break;
+															case 5:
+																nb_pollution--;
+																break;
+															case 6:
+																nb_pyranha--;
+																break;
+															case 7:
+																nb_requin--;
+																break;
+															case 8:
+																nb_orque--;
+																break;
+															case 9:
+																nb_baleine--;
+																break;
+															default:
+																break;
+														}
 
     switch(animal_courant.espece)
     {
