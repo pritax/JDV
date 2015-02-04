@@ -112,7 +112,7 @@ int main(int argc, char* argv[])
 					while(tour_courant <= _NOMBRE_DE_TOURS_ && victory == faux )
 							{
 								// on traite les évènements SDL, clavier, souris, fentre ...
-									if(tour_mod == 30){ tour_mod=0;}
+									if(tour_mod == 500){ tour_mod=0;}
 									else 
 									{
 										tour_mod++;
