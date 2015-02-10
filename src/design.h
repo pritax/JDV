@@ -26,25 +26,6 @@ void dessinerMap(TTF_Font*,int);
 int estMur(int);
 
 /********************************************//**
- * \brief Permet de Spawn le pecheur ou une animal a la case INDEX sur la carte
- *
- * \param int INDEX
- * \return void
- *
- ***********************************************/
-void respawn(int index);
-
-/********************************************//**
- * \brief Permet de déplacer le pecheur ou une animal a la case INDEX sur la carte
- *
- * \param int INDEX
- * \return void
- *
- ***********************************************/
- 
-void deplacerPecheur(int index);
-
-/********************************************//**
  * \brief Permet d'afficher et de concatener la chaine et la value sur l'ecran.
  *
  * \param chaine char*

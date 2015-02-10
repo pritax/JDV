@@ -10,7 +10,6 @@
 #include <string.h>
 #include <stdio.h>
 
-extern unsigned int sacPecheur1,pvPecheur1;
 extern SDL_Surface
 					*carte[][_MAP_SIZE_],
 					*ecran,
@@ -187,26 +186,6 @@ int estMur(int index)
 			|| 	index>=(_TAILLE_TOTALE_-_MAP_SIZE_) // Bas
 			);
 }
-
-
-void respawn(int index)
-{
-    supprimer_animal(index);
-    posPecheur1 = __POS_PECHEUR_INIT__;
-    ajouterPecheur(posPecheur1);
-    map[index].sac=__SAC_BASE__;
-    pvPecheur1 = __NB_VIE__;
-    
-    SDL_Flip(ecran);
-}
-
-void deplacerPecheur(int index)
-{
-    supprimer_animal(index);
-    ajouterPecheur(index);
-    map[index].sac=sacPecheur1;
-}
-
 
 
 void print_values(char * chaine, int value,int x, int y,TTF_Font* police)

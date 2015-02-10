@@ -27,8 +27,6 @@ unsigned int
 Animal* map;
 BOOLEEN victory = faux;
 
-extern unsigned int sacPecheur1,pvPecheur1;
-
 extern SDL_Surface 
 					*imgVictory,
 					*ecran;
@@ -48,15 +46,12 @@ int main(int argc, char* argv[])
 	int 
 		i				= __VALEUR_NULLE__,
 		index			= __VALEUR_NULLE__,
-		degradation		= __VALEUR_NULLE__,
 		ModeDeJeu		= __VALEUR_NULLE__,
 		tour_mod		= __VALEUR_NULLE__;
 		
 	Animal animal_courant;
 	int* tab=NULL;
-	Type espece_c;
 	TTF_Font* police;
-    SDL_Event eventquit;
     
     SDL_Rect posVictory;
 				posVictory.x = __POS_X_HAUT_GAUCHE__;
@@ -71,9 +66,6 @@ int main(int argc, char* argv[])
 
 	/* Fin déclaration variables */
     sdl_loader("Jeu de la vie | Try your best !");
-    
-    
-	/* ############################################## Début prog ############################################## */
 	
 	TTF_Init(); // Init de la police graphique
 	
@@ -84,11 +76,6 @@ int main(int argc, char* argv[])
 	/* affecte des animaux à l'intérieur de la map */
 
 	ajouter_all_animaux();
-	posPecheur1=__POS_PECHEUR_INIT__;
-	
-	
-	posPecheur1 = __POS_PECHEUR_INIT__;
-    respawn(posPecheur1);
 
     // === Definition mode de jeu ===
 
@@ -118,82 +105,18 @@ int main(int argc, char* argv[])
 										tour_mod++;
 										continue;
 									}
-								SDL_event_listener(eventquit,police);
+								//SDL_event_listener(eventquit,police);
 								tab = alea(_TAILLE_TOTALE_,_TAILLE_TOTALE_);
-								
-								// == Test Pecheur ==
-								
-								printf("Vie du pecheur %d\n",pvPecheur1);
-								if ( pvPecheur1 < 1 )
-												{
-													printf("Vous êtes DEAD (mdr), vous allez respawn\n");
-													sleep(3);
-													respawn(posPecheur1);
-													//SDL_Flip(ecran);
-													sacPecheur1 = 0;
-													sleep(1);
-												}
-									else
-										printf("Vous êtes encore ALIVE\n");
-													
-								// == Fin test Pecheur ==
 													
 									for(i=0;i<_TAILLE_TOTALE_;i++)
 										{
 											if(tour_courant % 10 != 0) break;
-											
-											
-											if((degradation == 87) && sacPecheur1 >__SAC_BASE__) {sacPecheur1--;degradation =0;}
-											else
-												degradation++;
 											 //par simplicité, déclaration d'un animal courant
 													index = tab[i];
 													animal_courant = map[index];
 													
-													/* CSV */
-													espece_c = animal_courant.espece;
-													switch(espece_c)
-														{
-															case 1:
-																nb_plancton++;
-																break;
-															case 2:
-																nb_corail++;
-																break;
-															case 3:
-																nb_bar++;
-																break;
-															case 4:
-																nb_thon++;
-																break;
-															case 5:
-																nb_pollution++;
-																break;
-															case 6:
-																nb_pyranha++;
-																break;
-															case 7:
-																nb_requin++;
-																break;
-															case 8:
-																nb_orque++;
-																break;
-															case 9:
-																nb_baleine++;
-																break;
-															default:
-																break;
-														}
-														/* CSV */
-													
 
 													if(animal_courant.espece == t_mur || animal_courant.espece == t_vide) continue;
-
-													if (animal_courant.espece == t_pecheur)
-														{
-															animal_courant.sac = sacPecheur1;
-															continue;
-														}
 
 													else
 														{
@@ -201,45 +124,7 @@ int main(int argc, char* argv[])
 
 																// si règle de surive non repsectée, l'animal meurt et est remplacé par un animal
 																//de type vide (case libre)
-																if ( appliquerSatiete(index) == vrai )
-																		{
-																			/* CSV */
-																			espece_c = map[index].espece;
-																			switch(espece_c)
-														{
-															case 1:
-																nb_plancton--;
-																break;
-															case 2:
-																nb_corail--;
-																break;
-															case 3:
-																nb_bar--;
-																break;
-															case 4:
-																nb_thon--;
-																break;
-															case 5:
-																nb_pollution--;
-																break;
-															case 6:
-																nb_pyranha--;
-																break;
-															case 7:
-																nb_requin--;
-																break;
-															case 8:
-																nb_orque--;
-																break;
-															case 9:
-																nb_baleine--;
-																break;
-															default:
-																break;
-														}
-														/* Fin CSV */
-																		}
-
+																if ( appliquerSatiete(index) == vrai );
 																	else 	{
 																								// Application de la règle REPRODUCTION
 																								if ( appliquerReproduction(index) == vrai ){};
@@ -256,12 +141,7 @@ int main(int argc, char* argv[])
 															}
 
 												}
-
 														__Transition_tours__
-															__Verifier_victory__
-																if(tour_courant % 10 == 0) {__RESET_0__}
-																else{
-																	__LOGS__}
 																	
 							}
 

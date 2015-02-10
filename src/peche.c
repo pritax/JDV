@@ -20,7 +20,7 @@ BOOLEEN activation_TabPeche = faux;
 
 int construire_pont(int position,Direction d,TTF_Font* police)
 {
-
+	int sacPecheur1=0;
 	if(sacPecheur1<=0)
 	{
 		pecher(position,d,police);
@@ -97,7 +97,8 @@ void traitement_sur_poisson_peches_au_filet(int** tab_2dim)
 	    t			=0,
 	    cp 			=0,
 	    k  			=0,
-	    selected	=0;
+	    selected	=0,
+	    sacPecheur1 = __VALEUR_NULLE__;
 	    
 	int val = 0;
 	//Type test;
@@ -152,7 +153,8 @@ int lancer_canne(int position,int taille_canne,TTF_Font* police)
 		posCurseur	=position,
 		maPos		=0,
 		done		=0,
-		dir			=4;
+		dir			=4,
+		sacPecheur1 =__VALEUR_NULLE__;
 	SDL_Event event_canne;
 	if(posCanne != NULL)
 		free(posCanne);
@@ -234,7 +236,8 @@ void pecher(int position,Direction d,TTF_Font* police)
 	/* peche au filet*/
 	int 
 		choix 			= choixPeche(police),
-		poisson_peche	= __VALEUR_ERROR__;
+		poisson_peche	= __VALEUR_ERROR__,
+		sacPecheur1 = __VALEUR_NULLE__;
 	
 	int **indices_poisson_peches;
 

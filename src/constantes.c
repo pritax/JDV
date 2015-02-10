@@ -21,5 +21,5 @@ BOOLEEN init_carte()
 }
 
 /* creation des SDL_Rect permettant le positionnement des elements */
-SDL_Rect positionPecheur,positionSac1,positionArrow,  positionFond,positionLogo;
+SDL_Rect positionSac1,positionArrow,positionFond,positionLogo;
 SDL_Event event; /* La variable contenant l'événement */

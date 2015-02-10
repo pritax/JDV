@@ -6,7 +6,6 @@
 #include <stdlib.h>
 
 extern size_t dernier_repas;
-extern unsigned int sacPecheur1;
 extern Animal* map;
 
 void ajouter_animal_alea(Type t_animal)
@@ -524,22 +523,4 @@ void ajouter_animal(Type t_animal, int pos)
         break;
     }
 
-}
-
-void ajouterPecheur(int position)
-{
-    map[position].espece = t_pecheur;
-
-    map[position].dernier_repas = 0; /* nombre de tours depuis dernier repas */
-    map[position].derniere_reproduction = 0; /* nombre de tours depuis derniere reproduction */
-    map[position].satiete = 1000; /* nombre de tours de survie supp du dernier repas */
-    /************************** Constantes ***************************************/
-    map[position].duree_survie = 1000; /* Nombre de tours pendant lesquels l'animal survit sans manger. */
-    map[position].taille_bide = 10;/* la taille que l'animal peut avoir de rempli. */
-    map[position].metabolisme = 1; /* Energie dépensée pour vivre. */
-    map[position].gestation = 0; /* Energie déprnsée par reproduction */
-    map[position].taille = 1; /* taille procurée aux prédateurs. */
-    map[position].saut_max = 1; /* Nombre de déplacement max */
-    map[position].frequence_reproduction = 0;
-    map[position].sac = 0;
 }

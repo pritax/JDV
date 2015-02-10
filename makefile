@@ -5,7 +5,7 @@ Compil=-g -O0 -Wall
 Lib=`sdl-config --cflags --libs` -lSDL_image -lSDL_ttf
 
 EXEC=executable
-Objets=obj/main.o obj/init.o obj/design.o obj/constantes.o obj/peche.o obj/conf.o obj/predation.o obj/satiete.o obj/reproduction.o obj/map.o obj/animal.o obj/ajout_animaux.o obj/deplacement.o
+Objets=obj/main.o obj/init.o obj/design.o obj/constantes.o obj/peche.o obj/predation.o obj/satiete.o obj/reproduction.o obj/map.o obj/animal.o obj/ajout_animaux.o obj/deplacement.o
 
 OBJDIR = obj
 SRCDIR = src

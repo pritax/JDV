@@ -103,11 +103,6 @@ BOOLEEN predater(int index)
             return vrai;
 
         }
-        if ( map[future_proie].espece == t_pecheur )
-			{
-				pvPecheur1--;
-				return vrai;
-			}
     case t_pollution:
         if ( map[future_proie].espece == t_corail &&
                 (unsigned int)( taille_FP + animal_courant.taille) < (unsigned int)animal_courant.taille_bide
@@ -133,11 +128,6 @@ BOOLEEN predater(int index)
             map[future_proie].satiete += taille_FP;
             return vrai;
         }
-        if ( map[future_proie].espece == t_pecheur )
-			{
-				pvPecheur1--;
-				return vrai;
-			}
     case t_requin:
         if ( map[future_proie].espece == t_bar
 				&&
@@ -173,11 +163,6 @@ BOOLEEN predater(int index)
             return vrai;
 
         }
-        if ( map[future_proie].espece == t_pecheur )
-			{
-				pvPecheur1--;
-				return vrai;
-			}
     default:
         return faux;
     } /* fin switch espece */

@@ -24,18 +24,13 @@ extern SDL_Surface
 extern int continuer;/**< variable permettant de sortir d'une boucle d'evenement SDL */
 
 extern SDL_Rect
-				positionPecheur,/**< Permet le positionnement du pecheur a l'ecran */
 				position,/**<  Permet le positionnement de l'ecran (depreciated)*/
 				positionFond;/**<  Permet le positionnement du fond a l'ecran*/
 
 
 extern SDL_Event event; /* Variable permettant l'ecoute d'evenements SDL La variable contenant l'Ã©vÃ©nement */
-extern unsigned int 
-					posPecheur1,/**<  Position courante du pecheur 1*/
+extern unsigned int
 					tour_courant;
-unsigned int 
-				sacPecheur1 = __SAC_BASE__, 
-				pvPecheur1=__NB_VIE__;
 
 extern Animal* map;
 
@@ -69,7 +64,7 @@ void reinit_params(TTF_Font* police)
         SDL_BlitSurface(imgSac1, NULL, ecran, &positionSac1); //< Blittage de l'image du sac
 
 
-		print_sac(police); //< Affichage du sac et de sa contenance, mise a jour du logo variant
+		//print_sac(police); //< Affichage du sac et de sa contenance, mise a jour du logo variant
         print_legend(police);// Affiche le texte de la lÃ©gende
         print_help(police);
 //        print_values("n du tour: ",tour_courant,POSITION_PANIER_X + 220 , POSITION_PANIER_Y + 40,30);
@@ -162,6 +157,7 @@ void print_screen(char* str,int x, int y,TTF_Font* police)
 
 void print_sac(TTF_Font* police)
 {
+	int sacPecheur1=0; // Pour eviter prob compilation
     switch(sacPecheur1)
     {
     case 0:
@@ -186,6 +182,7 @@ void SDL_event_listener(SDL_Event eventquit,TTF_Font* police)
             on les dÃ©piles un par un et on regarde quel Ã©vÃ¨nement
             a Ã©tÃ© appellÃ©
 	     */
+	    int posPecheur1=0;
         while(SDL_PollEvent(&eventquit) != 0)
         {   int nextPos;
             switch(eventquit.type)
@@ -203,7 +200,7 @@ void SDL_event_listener(SDL_Event eventquit,TTF_Font* police)
                             {
                                 supprimer_animal(posPecheur1);
                                 map[posPecheur1].espece=t_mur;
-                                deplacerPecheur(nextPos);
+                                //deplacerPecheur(nextPos);
                                 posPecheur1=nextPos;
                             }
                             else if (nextPos < _TAILLE_TOTALE_)
@@ -218,7 +215,7 @@ void SDL_event_listener(SDL_Event eventquit,TTF_Font* police)
                             {
                                 supprimer_animal(posPecheur1);
                                 map[posPecheur1].espece=t_mur;
-                                deplacerPecheur(nextPos);
+                                //deplacerPecheur(nextPos);
                                 posPecheur1=nextPos;
                             }
                             else if (nextPos < _TAILLE_TOTALE_)
@@ -233,7 +230,7 @@ void SDL_event_listener(SDL_Event eventquit,TTF_Font* police)
                             {
                                 supprimer_animal(posPecheur1);
                                 map[posPecheur1].espece=t_mur;
-                                deplacerPecheur(nextPos);
+                                //deplacerPecheur(nextPos);
                                 posPecheur1=nextPos;
                             }
                             else if (nextPos < _TAILLE_TOTALE_)
@@ -248,7 +245,7 @@ void SDL_event_listener(SDL_Event eventquit,TTF_Font* police)
                             {
                                 supprimer_animal(posPecheur1);
                                 map[posPecheur1].espece=t_mur;
-                                deplacerPecheur(nextPos);
+                                //deplacerPecheur(nextPos);
                                 posPecheur1=nextPos;
                             }
                             else if (nextPos < _TAILLE_TOTALE_)
@@ -477,7 +474,7 @@ void print_help(TTF_Font* police)
 
 void afficher_pvPecheur(TTF_Font *police)
 	{
-		int i;
+		int i,pvPecheur1=0;
 		SDL_Rect posCoeur;
 		posCoeur.x = _TAILLE_TOTALE_/3;
 		posCoeur.y = (_TAILLE_TOTALE_/2)+(3*_MAP_SIZE_);

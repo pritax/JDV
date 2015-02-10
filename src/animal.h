@@ -24,9 +24,7 @@ typedef struct Animal
     unsigned int taille; /**< taille procurée aux prédateurs *//* taille procurée aux prédateurs. */
     int saut_max;/**< Nombre de déplacement max */ /* Nombre de déplacement max */
     unsigned int frequence_reproduction; /**< Frequence a laquelle l'animal se reproduit */
-
-    unsigned int sac; /**< Si l'animal est un pecheur, contenance du sac *//* pr le pecheur */
-
+    unsigned int propriete; /**< Le proprietaire de la ressource */
 }Animal;
 
 /********************************************//**

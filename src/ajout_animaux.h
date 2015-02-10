@@ -52,15 +52,5 @@ void ajouter_all_animaux(void);
  ***********************************************/
 void ajouter_mur(int);
 
-
-/********************************************//**
- * @brief Ajout un pecheur à partir de sa position dans la map
- *
- * @param int
- * @return void
- *
- ***********************************************/
-void ajouterPecheur(int);
-
 #endif
 
