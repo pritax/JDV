@@ -14,9 +14,7 @@ int creerSocket()
 	serveur.sin_port = htons(_PORT_);
 	serveur.sin_addr.s_addr = htonl(INADDR_ANY);
 	if ( bind(descripteur_socket,(struct sockaddr*)&serveur,sizeof(serveur)) == SOCKET_ERROR )
-		{
 		perror("Bind");
-		}
 
 	/* Bind fait */
 

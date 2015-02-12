@@ -15,7 +15,7 @@
 /* Defines */
 
 #define SOCKET_ERROR -1
-#define _PORT_ 6000
+#define _PORT_ 8888
 #define _BUFFSIZE_ 1024
 #define __VALEUR_NULLE__ 0
 #define __NB_CLIENTS__ 2
