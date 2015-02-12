@@ -61,13 +61,12 @@ void reinit_params(TTF_Font* police)
 
         SDL_BlitSurface(imageDeFond, NULL, ecran, &positionFond);//< Blittage de l'image de fond
         SDL_BlitSurface(logo, NULL, ecran, &positionLogo); //< Bittage du logo
-        SDL_BlitSurface(imgSac1, NULL, ecran, &positionSac1); //< Blittage de l'image du sac
+        //SDL_BlitSurface(imgSac1, NULL, ecran, &positionSac1); //< Blittage de l'image du sac
 
 
 		//print_sac(police); //< Affichage du sac et de sa contenance, mise a jour du logo variant
         print_legend(police);// Affiche le texte de la lÃ©gende
-        print_help(police);
-//        print_values("n du tour: ",tour_courant,POSITION_PANIER_X + 220 , POSITION_PANIER_Y + 40,30);
+        //print_help(police);
 
 
         // rÃ©initialisation d'une carte vide*/
@@ -190,7 +189,7 @@ void SDL_event_listener(SDL_Event eventquit,TTF_Font* police)
                 case SDL_QUIT:
                     tour_courant=_NOMBRE_DE_TOURS_;
                     break;
-                case SDL_KEYDOWN:
+                /*case SDL_KEYDOWN:
                     switch(eventquit.key.keysym.sym)
                     {
                         case SDLK_z:
@@ -261,7 +260,7 @@ void SDL_event_listener(SDL_Event eventquit,TTF_Font* police)
                     break;
                 // clic gauche de la souris
                 case SDL_MOUSEBUTTONDOWN:
-                    break;
+                    break;*/
                 default: break;
             }
         }

@@ -7,7 +7,7 @@
 
 #define WIDTH 750 //don't touch this one
 #define HEIGH 700
-#define CASE 5
+#define CASE 12
 #define SAUTDECASE (CASE + 5)
 #define POSITION_PANIER_X (WIDTH/2)-(_MAP_SIZE_/2*SAUTDECASE) - 120
 #define POSITION_PANIER_Y (HEIGH/2)+(_MAP_SIZE_/2*SAUTDECASE)

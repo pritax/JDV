@@ -56,11 +56,7 @@ int main(int argc, char* argv[])
     SDL_Rect posVictory;
 				posVictory.x = __POS_X_HAUT_GAUCHE__;
 				posVictory.y = __POS_Y_HAUT_GAUCHE__;
-				
-	/* CSV */
-	FILE* fichier = fopen("data.csv",__EN_ECRITURE__);
-	fprintf(fichier, "nb_tour;plancton;corail;bar;thon;pollution;pyranha;requin;orque;baleine\n");
-	/* FIn CSV */
+	SDL_Event eventquit;
 
 	srand(time(NULL));
 
@@ -105,12 +101,12 @@ int main(int argc, char* argv[])
 										tour_mod++;
 										continue;
 									}
-								//SDL_event_listener(eventquit,police);
+								SDL_event_listener(eventquit,police);
 								tab = alea(_TAILLE_TOTALE_,_TAILLE_TOTALE_);
 													
 									for(i=0;i<_TAILLE_TOTALE_;i++)
 										{
-											if(tour_courant % 10 != 0) break;
+											if(tour_courant % 100 != 0) break;
 											 //par simplicité, déclaration d'un animal courant
 													index = tab[i];
 													animal_courant = map[index];
@@ -147,7 +143,6 @@ int main(int argc, char* argv[])
 
 		__FIN_JEU__
 									free(map);
-									fclose(fichier);
 									TTF_CloseFont(police);
 									TTF_Quit();
 									SDL_Quit();
