@@ -24,7 +24,11 @@ $(OBJDIR)/%.o:$(SRCDIR)/%.c
 do:
 	./do.sh
 clean:
+<<<<<<< HEAD
 	rm -Rvf obj
+=======
+	srm -Rvf obj
+>>>>>>> ae11ef7a381734574cf903cbd6e4c42b518c4685
 	@echo "obj et .o supprimés !"
 	mkdir obj
 	@echo "obj recrée !"

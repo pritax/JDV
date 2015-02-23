@@ -60,7 +60,6 @@ int main(int argc, char* argv[])
 
 	srand(time(NULL));
 
-
 		if ( creerSocket() == vrai )
 		printf("socket créee depuis le port %d\n",__PORT__);
 	
@@ -76,8 +75,6 @@ int main(int argc, char* argv[])
 							perror("pthread_create");
 							return EXIT_FAILURE;
 						}
-						
-
 	/* Fin déclaration variables */
     sdl_loader("Jeu de la vie | Try your best !");
 	
@@ -160,7 +157,6 @@ int main(int argc, char* argv[])
 							}
 
 		__FIN_JEU__
-
 					if(pthread_join(thread1, NULL))
 								{
 									perror("pthread_join");
