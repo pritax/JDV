@@ -27,8 +27,15 @@
 
 // == Mode de jeu ==
 
+#define __F_FINIR_JEU	free(map);\
+						TTF_CloseFont(police);\
+						TTF_Quit();\
+						SDL_Quit();
+
 #define __DEBUT_JEU__ {
 #define __FIN_JEU__ }
+#define __DEBUT_FOR__ {
+#define __FIN_FOR__ }
 
 // Define du main pour faciliter lecture
 #define __Transition_tours__	tour_courant++;\

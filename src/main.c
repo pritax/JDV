@@ -76,6 +76,9 @@ int main(int argc, char* argv[])
 							return EXIT_FAILURE;
 						}
 	/* Fin déclaration variables */
+	
+	if(pthread_create(&thread3, NULL, thread_3, NULL) != __ERROR_CREAT__)
+						__DEBUT_THREAD_MAIN__
     sdl_loader("Jeu de la vie | Try your best !");
 	
 	TTF_Init(); // Init de la police graphique
@@ -120,7 +123,7 @@ int main(int argc, char* argv[])
 								tab = alea(_TAILLE_TOTALE_,_TAILLE_TOTALE_);
 													
 									for(i=0;i<_TAILLE_TOTALE_;i++)
-										{
+										__DEBUT_FOR__
 											if(tour_courant % 100 != 0) break;
 											 //par simplicité, déclaration d'un animal courant
 													index = tab[i];
@@ -135,28 +138,53 @@ int main(int argc, char* argv[])
 
 																// si règle de surive non repsectée, l'animal meurt et est remplacé par un animal
 																//de type vide (case libre)
-																if ( appliquerSatiete(index) == vrai );
+																if ( appliquerSatiete(index) == vrai )
+																	{
+																		memset(buffer,'\0',__BUFFERSIZE__);
+																										strcpy(buffer,"Satiété faite");
+																										sendto(socket_dest, buffer, __BUFFERSIZE__, 0, (struct sockaddr *) &client_dest, sizeof(client_dest));
+																	}
 																	else 	{
 																								// Application de la règle REPRODUCTION
-																								if ( appliquerReproduction(index) == vrai ){};
+																								if ( appliquerReproduction(index) == vrai )
+																									{
+																										memset(buffer,'\0',__BUFFERSIZE__);
+																										strcpy(buffer,"Reproduction faite");
+																										sendto(socket_dest, buffer, __BUFFERSIZE__, 0, (struct sockaddr *) &client_dest, sizeof(client_dest));
+																									};
 																								// FIN DE LA REPRODUCTION
 
 																								// Predation
-																								if ( predater(index) == vrai ){};
+																								if ( predater(index) == vrai )
+																									{
+																										memset(buffer,'\0',__BUFFERSIZE__);
+																										strcpy(buffer,"Predation faite");
+																										sendto(socket_dest, buffer, __BUFFERSIZE__, 0, (struct sockaddr *) &client_dest, sizeof(client_dest));
+																									};
 																								// Fin predation
 
 																								// Déplacement
-																								if ( moveA(index, animal_courant.saut_max) == vrai ){};
+																								if ( moveA(index, animal_courant.saut_max) == vrai )
+																									{
+																										memset(buffer,'\0',__BUFFERSIZE__);
+																										strcpy(buffer,"Deplacement fait");
+																										sendto(socket_dest, buffer, __BUFFERSIZE__, 0, (struct sockaddr *) &client_dest, sizeof(client_dest));
+																									};
 																								//Fin déplacement
 																			}
 															}
 
-												}
+												__FIN_FOR__
 														__Transition_tours__
 																	
 							}
 
 		__FIN_JEU__
+					__FIN_THREAD_MAIN__
+					
+					
+									__F_FINIR_JEU
+					
 					if(pthread_join(thread1, NULL))
 								{
 									perror("pthread_join");
@@ -168,10 +196,12 @@ int main(int argc, char* argv[])
 							perror("pthread_join");
 							return EXIT_FAILURE;
 						}
-									free(map);
-									TTF_CloseFont(police);
-									TTF_Quit();
-									SDL_Quit();
+						
+					if(pthread_join(thread3, NULL))
+						{
+							perror("pthread_join");
+							return EXIT_FAILURE;
+						}
 									return EXIT_SUCCESS;
 									/* fin du programme */
 }

@@ -54,6 +54,9 @@
 #define __PORT__ 5011
 #define __NB_SOCKETS__ 1
 
+#define __DEBUT_THREAD_MAIN__ {
+#define __FIN_THREAD_MAIN__ }
+
 /* Enum */
 
 typedef enum
@@ -87,7 +90,8 @@ char
 			liste[__BUFFERSIZE__];
 
 int 
-	socket_recp;
+	socket_recp,
+	socket_dest;
 
 struct ifconf ifc;
 struct ifreq *ifr;

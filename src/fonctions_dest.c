@@ -12,7 +12,6 @@ void initier_destinataire(void)
 BOOLEEN envoi_paquet(void)
 	{
 			int 
-				socket_dest, 
 				n, 
 				on;
 		
