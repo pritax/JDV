@@ -162,7 +162,7 @@ PAQUET* decoupeMsg(char*);
 PAQUET* remplirPaquet(HEADER, DATA);
 
 int isSet(char flag);
-void apduControlleur(PAQUET*)
+void apduControlleur(PAQUET*, MODE);
 
 /* Variabls */
 
