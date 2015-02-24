@@ -18,6 +18,7 @@
 /* Quelques defines */
 
 #define __EN_ECRITURE__ "w"
+#define __FIN_CHAINE__ '\0'
 #define __DEHORS_MAP__ -1 /* En dehors de la map */
 #define __POS_X_HAUT_GAUCHE__ 0
 #define __POS_Y_HAUT_GAUCHE__ 0
@@ -27,10 +28,10 @@
 
 // == Mode de jeu ==
 
-#define __F_FINIR_JEU	free(map);\
-						TTF_CloseFont(police);\
-						TTF_Quit();\
-						SDL_Quit();
+#define __F_FINIR_JEU   free(map);\
+                        TTF_CloseFont(police);\
+                        TTF_Quit();\
+                        SDL_Quit();
 
 #define __DEBUT_JEU__ {
 #define __FIN_JEU__ }
@@ -38,30 +39,30 @@
 #define __FIN_FOR__ }
 
 // Define du main pour faciliter lecture
-#define __Transition_tours__	tour_courant++;\
-				dessinerMap(police,__DEHORS_MAP__);\
-				free(tab);
+#define __Transition_tours__    tour_courant++;\
+                dessinerMap(police,__DEHORS_MAP__);\
+                free(tab);
 #define __LOGS__ fprintf(fichier, "%d;%d;%d;%d;%d;%d;%d;%d;%d;%d\n",tour_courant,nb_plancton,nb_corail,nb_bar,nb_thon,nb_pollution,nb_pyranha,nb_requin,nb_orque,nb_baleine);
 #define __RESET_0__ nb_plancton=0,\
-				nb_corail=0,\
-				nb_bar=0,\
-				nb_thon=0,\
-				nb_pollution=0,\
-				nb_pyranha=0,\
-				nb_requin=0,\
-				nb_orque=0,\
-				nb_baleine=0;
+                nb_corail=0,\
+                nb_bar=0,\
+                nb_thon=0,\
+                nb_pollution=0,\
+                nb_pyranha=0,\
+                nb_requin=0,\
+                nb_orque=0,\
+                nb_baleine=0;
 
 // Condition pour la victoire version macro 
 
 #define __Verifier_victory__ if ( posPecheur1 >= (_TAILLE_TOTALE_-_MAP_SIZE_) )\
-																{\
-																	victory=vrai;\
-																	printf("Bravo, vous avez gagné !\n");\
-																	SDL_BlitSurface(imgVictory, NULL, ecran, &posVictory);\
-																	SDL_Flip(ecran);\
-																	sleep(10);\
-																}
+                                                                {\
+                                                                    victory=vrai;\
+                                                                    printf("Bravo, vous avez gagné !\n");\
+                                                                    SDL_BlitSurface(imgVictory, NULL, ecran, &posVictory);\
+                                                                    SDL_Flip(ecran);\
+                                                                    sleep(10);\
+                                                                }
 
 #define _MAP_SIZE_ 20
 #define _TAILLE_TOTALE_ _MAP_SIZE_*_MAP_SIZE_
