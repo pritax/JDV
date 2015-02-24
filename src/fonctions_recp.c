@@ -37,7 +37,9 @@ BOOLEEN reception_paquet(void)
 		int 
 			longueur_dest,
 			accuse_recp;
+		char* msg;
 		
+		PAQUET* receivedPacket;
 		/* Début */
 		
 		longueur_dest = sizeof(client_dest);
@@ -47,7 +49,14 @@ BOOLEEN reception_paquet(void)
 								(socklen_t*)&longueur_dest);
 		if ( accuse_recp <= __SUCCESS_ERRNO__ ) { perror("Erreur reception");\
 												  return faux; }
-		printf("serveur recoit:");
+		
+		msg = buffer;
+		receivedPacket = decoupeMsg(msg);
+		apduControlleur(receivedPacket,M_reception);
+		/* reception d'un message, on appel le controller pour désencapsuller le paquet */
+
+
+		printf("\n\nserveur recoit:");
 		printf("%s\n",buffer);
 		printf("...de la part de %s(%d)\n",inet_ntoa(client_dest.sin_addr),htons(client_dest.sin_port));
 		return vrai;

@@ -72,12 +72,18 @@ void apduControlleur(PAQUET* p_paquet,MODE mode_actuel)
         switch(i)
         {
             case T_HELLOMESSAGE:
-                if(isSet(F_HELLOMESSAGE));
-                    /*{
-                            on_helloMessage(mode_actuel);
+                if(mode_actuel==M_reception && isSet(F_HELLOMESSAGE));
+                {
+                            printf(" F_HELLOMESSAGE PACKET RECEIVED ! ");
+                            //on_helloMessage(p_pqauet,mode_actuel);
                             // Si M_envoi alors hello ENCAPSULE le paquet
                             // Sinon (M_reception) DESENCAPSULE le paquet
-                    }*/
+                }
+                if(mode_actuel==M_envoi && !isSet(F_HELLOMESSAGE));
+                {
+                    //on met à F_SET le flag F_HELLOMESSAGE via la fonction F_set(flag)
+
+                }
             break;
             case T_HELLOREPLY:
                 if(isSet(F_HELLOREPLY);
